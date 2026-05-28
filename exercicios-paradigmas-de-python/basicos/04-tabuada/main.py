@@ -1,0 +1,29 @@
+try: # O programa é envolvido em um bloco try-except para lidar com possíveis erros de entrada, como o usuário digitar um valor que não seja um número inteiro.
+    num=int(input("Digite um número inteiro: "))  # O programa solicita que o usuário digite um número inteiro e armazena a entrada na variável "num". A função int() é utilizada para converter a entrada do usuário em um número inteiro, permitindo que o programa realize operações matemáticas com esse valor.
+    print(f"Tabuada de {num}") # O programa exibe a mensagem "Tabuada de {num}", onde {num} é o número digitado pelo usuário. Isso serve como um título para a tabuada que será exibida a seguir.
+    
+    print("SOMA") # O programa exibe a mensagem "SOMA" para indicar que a próxima seção da tabuada será dedicada às operações de adição.
+    for i in range(1, 11): # O programa utiliza um loop for para iterar sobre os números de 1 a 10 (inclusive). A função range(1, 11) gera uma sequência de números que começa em 1 e termina em 10, permitindo que o programa execute as operações de adição para cada um desses números.
+            resultado = num + i # Dentro do loop, o programa calcula o resultado da adição entre o número digitado pelo usuário (num) e o número atual do loop (i), armazenando o resultado na variável "resultado".
+            print(f"{num} + {i:2} = {resultado:.2f}") # O programa exibe o resultado da adição em um formato específico. A expressão f"{num} + {i:2} = {resultado:.2f}" utiliza f-strings para formatar a saída. O número digitado pelo usuário (num) é exibido, seguido pelo número atual do loop (i) formatado com 2 dígitos de largura, e o resultado da adição é exibido com 2 casas decimais.
+    print("-"*30) # O programa exibe uma linha de 30 caracteres "-" para separar visualmente as seções da tabuada.
+
+    print("SUBTRAÇÃO") # O programa exibe a mensagem "SUBTRAÇÃO" para indicar que a próxima seção da tabuada será dedicada às operações de subtração.
+    for i in range(1, 11): # O programa utiliza um loop for para iterar sobre os números de 1 a 10 (inclusive). A função range(1, 11) gera uma sequência de números que começa em 1 e termina em 10, permitindo que o programa execute as operações de subtração para cada um desses números.
+            resultado = num - i # Dentro do loop, o programa calcula o resultado da subtração entre o número digitado pelo usuário (num) e o número atual do loop (i), armazenando o resultado na variável "resultado".
+            print(f"{num+i:2} - {num} = {resultado:.2f}") # O programa exibe o resultado da subtração em um formato específico. A expressão f"{num+i:2} - {num} = {resultado:.2f}" utiliza f-strings para formatar a saída. O número atual do loop (i) é adicionado ao número digitado pelo usuário (num) e exibido com 2 dígitos de largura, seguido pelo número digitado pelo usuário (num) e o resultado da subtração exibido com 2 casas decimais.
+    print("-"*30) # O programa exibe uma linha de 30 caracteres "-" para separar visualmente as seções da tabuada.
+
+    print("MULTIPLICAÇÃO") # O programa exibe a mensagem "MULTIPLICAÇÃO" para indicar que a próxima seção da tabuada será dedicada às operações de multiplicação.
+    for i in range(1, 11): # O programa utiliza um loop for para iterar sobre os números de 1 a 10 (inclusive). A função range(1, 11) gera uma sequência de números que começa em 1 e termina em 10, permitindo que o programa execute as operações de multiplicação para cada um desses números.
+            resultado = num * i # Dentro do loop, o programa calcula o resultado da multiplicação entre o número digitado pelo usuário (num) e o número atual do loop (i), armazenando o resultado na variável "resultado".
+            print(f"{num} x {i:2} = {resultado:.2f}") # O programa exibe o resultado da multiplicação em um formato específico. A expressão f"{num} x {i:2} = {resultado:.2f}" utiliza f-strings para formatar a saída. O número digitado pelo usuário (num) é exibido, seguido pelo número atual do loop (i) formatado com 2 dígitos de largura, e o resultado da multiplicação é exibido com 2 casas decimais.
+    print("-"*30) # O programa exibe uma linha de 30 caracteres "-" para separar visualmente as seções da tabuada.
+
+    print("DIVISÃO") # O programa exibe a mensagem "DIVISÃO" para indicar que a próxima seção da tabuada será dedicada às operações de divisão.
+    for i in range(1, 11): # O programa utiliza um loop for para iterar sobre os números de 1 a 10 (inclusive). A função range(1, 11) gera uma sequência de números que começa em 1 e termina em 10, permitindo que o programa execute as operações de divisão para cada um desses números.
+            dividendo = num * i # Dentro do loop, o programa calcula o dividendo para a operação de divisão. O dividendo é obtido multiplicando o número digitado pelo usuário (num) pelo número atual do loop (i), armazenando o resultado na variável "dividendo".
+            print(f"{dividendo:2} / {num} = {i:2}") # O programa exibe o resultado da divisão em um formato específico. A expressão f"{dividendo:2} / {num} = {i:2}" utiliza f-strings para formatar a saída. O dividendo é exibido com 2 dígitos de largura, seguido pelo número digitado pelo usuário (num) e o resultado da divisão (i) também exibido com 2 dígitos de largura.
+            
+except ValueError: # Se o usuário digitar um valor que não possa ser convertido para um número inteiro, como uma string ou um número decimal, o programa irá gerar uma exceção do tipo ValueError. O bloco except captura essa exceção e executa o código dentro dele.
+       print("Erro: Digite apenas números inteiros") # Se uma exceção do tipo ValueError for capturada, o programa exibe a mensagem "Erro: Digite apenas números inteiros" para informar ao usuário que a entrada foi inválida e que ele deve digitar um número inteiro.
