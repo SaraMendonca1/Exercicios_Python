@@ -1,5 +1,6 @@
 from typing import List, Optional
 
+#CRIAÇÃO DE CLASSES
 
 class ContaBancaria:
     def __init__(self, numero_conta: str, titular: str, saldo_inicial: float = 0.0):
@@ -42,11 +43,13 @@ class Banco:
         return next((c for cli in self.clientes for c in cli.contas if c.numero_conta == numero_conta), None)
 
 
+#EXECUÇÃO DO SISTEMA
 
 if __name__ == "__main__":
     banco = Banco()
     nome_banco = "TechBank"
 
+    # Criação e Registro do Carlos Andrade
     cliente1 = Cliente("Carlos Andrade", "777.888.999-11")
     
     conta1 = ContaBancaria("101-A", cliente1.nome, saldo_inicial=2500.0)
@@ -58,17 +61,9 @@ if __name__ == "__main__":
     print(f"Conta {conta2.numero_conta} adicionada ao cliente {cliente1.nome}.")
 
     banco.adicionar_cliente(cliente1)
-    print(f"Cliente {cliente1.nome} adicionado ao banco {nome_banco}.")
+    print(f"Cliente {cliente1.nome} adicionado ao banco {nome_banco}.\n")
 
-    cliente2 = Cliente("Fernanda Costa", "444.555.666-22")
-    
-    conta3 = ContaBancaria("201-C", cliente2.nome, saldo_inicial=0.0)
-    cliente2.adicionar_conta(conta3)
-    print(f"Conta {conta3.numero_conta} adicionada ao cliente {cliente2.nome}.")
-
-    banco.adicionar_cliente(cliente2)
-    print(f"Cliente {cliente2.nome} adicionado ao banco {nome_banco}.\n")
-
+    # Histórico e Movimentações do Carlos Andrade
     print(f"Contas de {cliente1.nome}:")
     for conta in cliente1.contas:
         print(f" Número: {conta.numero_conta}, Saldo: R$ {conta.verificar_saldo():.2f}")
@@ -82,12 +77,8 @@ if __name__ == "__main__":
     print(f"Saque de R$ {valor_saque:.2f} realizado. Novo saldo: R$ {conta1.verificar_saldo():.2f}")
 
     print(f"Saldo atual da conta {conta1.numero_conta}: R$ {conta1.verificar_saldo():.2f}\n")
-
     
+    # Busca do Carlos Andrade no sistema
     cliente_encontrado = next((c.nome for c in banco.clientes if c.nome == "Carlos Andrade"), None)
     if cliente_encontrado:
         print(f"Cliente encontrado: {cliente_encontrado}")
-
-    conta_encontrada = banco.buscar_conta("201-C")
-    if conta_encontrada:
-        print(f"Conta encontrada: {conta_encontrada.numero_conta} do titular {conta_encontrada.titular}")
